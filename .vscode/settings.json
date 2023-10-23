@@ -1,0 +1,6 @@
+{
+	"files.associations": {
+		"sprites.h": "c",
+		"graphics.h": "c"
+	}
+}
