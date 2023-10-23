@@ -1,3 +1,5 @@
+if not exist Compressed mkdir Compressed
+
 cd Compressed
 copy ..\..\..\Graphics\Background*.*
 copy ..\..\..\Graphics\*.spr
@@ -23,5 +25,5 @@ cd ..
 ..\..\..\Tools\BinToAsm Compressed\Background3.scn.pck Background3Scn.s
 ..\..\..\Tools\BinToAsm Compressed\Sprites.spr.pck Sprites.s
 
-del /Q *.obj
-del /Q *.lst
+if exist *.obj del /Q *.obj
+if exist *.lst del /Q *.lst
