@@ -32,6 +32,7 @@ Shared_S	+= $(wildcard SystemLib/Z80/Graphics/Sprite/*.s)
 Shared_S	+= $(wildcard SystemLib/Z80/Shared/*.s)
 Shared_S	+= $(wildcard SystemLib/Z80/Sound/IO/SN76489/*.s)
 
+# Castle.s triggers extra RAM support under MAME.
 RAM_S		= $(wildcard SystemLib/$(console)/Castle/Castle.s)
 System_S	= $(wildcard SystemLib/$(console)/crt0/Cart.s)
 System_S	+= $(wildcard SystemLib/$(console)/*.s)
