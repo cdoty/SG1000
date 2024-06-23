@@ -2,3 +2,5 @@
 *.obj
 *.pck
 Graphics/*.s
+Test.sg
+Test.symbols.txt
