@@ -25,5 +25,5 @@ cd ..
 ..\..\..\Tools\BinToAsm Compressed\Background3.scn.pck Background3Scn.s
 ..\..\..\Tools\BinToAsm Compressed\Sprites.spr.pck Sprites.s
 
-if exist *.obj del /Q *.obj
-if exist *.lst del /Q *.lst
+if exist *.obj del *.obj
+if exist *.lst del *.lst

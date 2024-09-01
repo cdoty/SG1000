@@ -1,7 +1,5 @@
 include "SystemDefines.inc"
 
-ext	clearSpriteAttributes
-ext	clearSpriteAttributeTable
 ext	updateSpriteAttributes
 ext	updateSpriteAttributeTable
 

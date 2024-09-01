@@ -8,11 +8,8 @@ extension	= sg
 console		= SG1000
 
 # Set the ROM and RAM start addresses
-cseg		= 0000
+cseg		= 0000-7FFF
 dseg	 	= C000
-
-# Set the output rom size
-romSize		= 32768
 
 # Set the tools path.
 TOOLS_PATH	= ../../Tools
@@ -73,4 +70,3 @@ clean:
 	
 $(name).$(extension): $(system) $(objects) $(graphics)
 	$(BIN_PATH)/LinkLE $(name).$(extension) $(cseg) $(dseg) $(system) $(objects) $(graphics) $(libs)
-	$(TOOLS_PATH)/PadFile 255 $(romSize) $(name).$(extension)
