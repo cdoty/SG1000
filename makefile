@@ -57,6 +57,7 @@ clean:
 	rm -f $(graphics)
 	rm -f $(lists)
 	rm -f $(name).$(extension)
+	rm -f $(name).sym
 	rm -f $(name).symbols.txt
 
 %.asm: %.c

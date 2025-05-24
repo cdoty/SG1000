@@ -25,7 +25,7 @@ irqHandler: public irqHandler
 
 	ld		a, (updateSpriteAttributes)
 	or		a
-	jp		z, exitNMIHandler
+	jp		z, exitIRQHandler
 
 	push	bc
 	push	de
@@ -35,7 +35,7 @@ irqHandler: public irqHandler
 	pop		de
 	pop		bc
 
-exitNMIHandler:
+exitIRQHandler:
 	in		a, (VDPBase + WriteOffset)	; Acknowledge interrupt
 
 	pop		hl

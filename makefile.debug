@@ -11,6 +11,10 @@ console		= SG1000
 cseg		= 1CC3-1CCD,0000-7FFF
 dseg	 	= C000
 
+# Set comment settings
+mameSystem	= sg1000
+cpuTag		= :z80
+
 # Set the tools path.
 TOOLS_PATH	= ../../Tools
 
@@ -60,6 +64,7 @@ clean:
 	rm -f $(graphics)
 	rm -f $(lists)
 	rm -f $(name).$(extension)
+	rm -f $(name).sym
 	rm -f $(name).symbols.txt
 
 %.asm: %.c
@@ -73,3 +78,5 @@ clean:
 	
 $(name).$(extension): $(ram) $(system) $(objects) $(graphics)
 	$(BIN_PATH)/LinkLE $(name).$(extension) $(cseg) $(dseg) $(ram) $(system) $(objects) $(graphics) $(libs)
+	$(TOOLS_PATH)/CreateComments $(mameSystem) $(cpuTag) $(name).symbols.txt $(name).$(extension) ../../mame/comments
+	$(TOOLS_PATH)/CreateSym $(name).symbols.txt $(name).sym
